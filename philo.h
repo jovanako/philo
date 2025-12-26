@@ -6,9 +6,12 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2025/12/25 20:20:20 by jkovacev         ###   ########.fr       */
+/*   Updated: 2025/12/26 20:18:20 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHILO_H
+# define PHILO_H
 
 #include <pthread.h>
 #include <string.h>
@@ -36,6 +39,7 @@ typedef struct s_philo
 	int		fork_right;
 }	t_philo;
 
-int	ft_atoi(const char *nptr);
-int	ft_strlen(char *s);
-int	print_error_and_return(char *s, int ret);
+long	ft_atol(char *nptr);
+int		ft_strlen(char *s);
+int		print_error_and_return(char *s, int ret);
+#endif

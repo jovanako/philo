@@ -1,48 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:36:40 by jkovacev          #+#    #+#             */
-/*   Updated: 2025/12/25 19:51:26 by jkovacev         ###   ########.fr       */
+/*   Created: 2025/12/26 20:06:01 by jkovacev          #+#    #+#             */
+/*   Updated: 2025/12/26 20:18:10 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static size_t	remove_special_characters(const char *n)
+static int	ft_isdigit(char c)
 {
-	size_t	i;
+	if (!(c >= '0' && c <= '9'))
+		return(0);
+	return (1);
+}
+
+static int	remove_special_characters(char *n)
+{
+	int	i;
 
 	i = 0;
 	while (n[i] == ' ' || (n[i] >= 9 && n[i] <= 13))
-	{
 		i++;
-	}
 	return (i);
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(char *nptr)
 {
-	size_t	i;
-	int		result;
+	int		i;
+	long	result;
 	int		sign;
 
 	result = 0;
 	sign = 1;
 	i = remove_special_characters(nptr);
 	if (nptr[i] == '+')
-	{
 		i++;
-	}
 	else if (nptr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	while (ft_isdigit(nptr[i]) && (i < ft_strlen(nptr)))
+	while ((i < ft_strlen(nptr)) && ft_isdigit(nptr[i]))
 	{
 		result = result * 10 + (nptr[i] - '0');
 		i++;
