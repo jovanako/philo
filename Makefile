@@ -6,7 +6,7 @@
 #    By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/26 19:58:27 by jkovacev          #+#    #+#              #
-#    Updated: 2025/12/26 20:08:02 by jkovacev         ###   ########.fr        #
+#    Updated: 2025/12/27 18:37:56 by jkovacev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = philo.c \
 		ft_atol.c \
-		helpers.c		
+		helpers.c \
+		lists1.c \
+		lists2.c	
 
 OBJDIR = objects
 OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
