@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2025/12/27 18:40:03 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:34:06 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,46 @@ typedef struct s_list
 
 typedef enum e_state
 {
+	UNINITIALIZED,
 	EATING,
 	THINKING,
 	SLEEPING
 }	t_state;
 
-typedef struct s_philo
+typedef struct s_args
 {
-	int		philo_id;
+	long	num_philos;
 	long	time_to_die;
 	long	time_to_eat;
 	long	time_to_sleep;
 	long	number_of_times_each_philosopher_must_eat;
-	int		is_eating;
-	int		fork_left;
-	int		fork_right;
+}	t_args;
+
+typedef struct s_fork
+{
+	pthread_mutex_t	mutex;
+	int				fork;
+}	t_fork;
+
+typedef struct s_philo
+{
+	int		philo_id;
+	t_args	*args;
+	t_fork	*fork_l;
+	t_fork	*fork_r;
+	t_state	state;
 }	t_philo;
 
 long	ft_atol(char *nptr);
 int		ft_strlen(char *s);
 int		print_error_and_return(char *s, int ret);
+long	get_time();
+t_args	*get_philo_args(char *argv[]);
+int		check_args(t_args *args);
+t_state	set_state(t_state state);
+int		philo_init(t_philo **philo, t_args *args, t_state state);
+t_list	*create_philo_list(t_args *args);
+int		thread_loop(t_list *philo_list, t_args *args);
 
 // lists
 t_list	*ft_lstnew(void *content);

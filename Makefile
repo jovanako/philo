@@ -6,7 +6,7 @@
 #    By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/26 19:58:27 by jkovacev          #+#    #+#              #
-#    Updated: 2025/12/27 18:37:56 by jkovacev         ###   ########.fr        #
+#    Updated: 2026/01/04 18:25:36 by jkovacev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,15 @@ NAME = philo
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 SRCS = philo.c \
 		ft_atol.c \
 		helpers.c \
 		lists1.c \
-		lists2.c	
+		lists2.c \
+		threads.c \
+		create_philo.c
 
 OBJDIR = objects
 OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
