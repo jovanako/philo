@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:20:25 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/04 18:37:09 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:40:24 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	*routine(void *ph)
 		printf("%zu %d has taken a fork\n", get_time(), philo->philo_id);
 		pthread_mutex_lock(&philo->fork_r->mutex);
 		printf("%zu %d is eating\n", get_time(), philo->philo_id);
-		usleep(philo->args->time_to_eat);
+		usleep(philo->args->time_to_eat * 1000);
 		pthread_mutex_unlock(&philo->fork_r->mutex); 
 		pthread_mutex_unlock(&philo->fork_l->mutex); 
 		printf("%zu %d is sleeping\n", get_time(), philo->philo_id);
-		usleep(philo->args->time_to_sleep);
+		usleep(philo->args->time_to_sleep * 1000);
 		printf("%zu %d is thinking\n", get_time(), philo->philo_id);
 		i++;
 	}
