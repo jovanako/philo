@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:33:14 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/05 17:36:02 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:13:01 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(temp);
 	}
 	*lst = NULL;
+}
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst != NULL)
+	{
+		if (lst->content != NULL)
+			del(lst->content);
+		free(lst);
+	}
 }
