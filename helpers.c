@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:05:07 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/04 18:21:52 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/05 17:34:44 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,4 @@ int		check_args(t_args *args)
 			return (0);
 		}
 	return (1);
-}
-
-t_state		set_state(t_state state)
-{
-	if (state == UNINITIALIZED || state == SLEEPING)
-		return (THINKING);
-	return (SLEEPING);
 }

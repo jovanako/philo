@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/04 18:34:06 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/05 17:34:30 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-typedef enum e_state
-{
-	UNINITIALIZED,
-	EATING,
-	THINKING,
-	SLEEPING
-}	t_state;
 
 typedef struct s_args
 {
@@ -55,7 +47,6 @@ typedef struct s_philo
 	t_args	*args;
 	t_fork	*fork_l;
 	t_fork	*fork_r;
-	t_state	state;
 }	t_philo;
 
 long	ft_atol(char *nptr);
@@ -64,8 +55,7 @@ int		print_error_and_return(char *s, int ret);
 long	get_time();
 t_args	*get_philo_args(char *argv[]);
 int		check_args(t_args *args);
-t_state	set_state(t_state state);
-int		philo_init(t_philo **philo, t_args *args, t_state state);
+int		philo_init(t_philo **philo, t_args *args);
 t_list	*create_philo_list(t_args *args);
 int		thread_loop(t_list *philo_list, t_args *args);
 

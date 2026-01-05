@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists.c                                            :+:      :+:    :+:   */
+/*   lists1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:33:14 by jkovacev          #+#    #+#             */
-/*   Updated: 2025/12/27 18:35:24 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/05 17:36:02 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,6 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 
-int	ft_lstsize(t_list *lst)
-{
-	int		count;
-	t_list	*current;
-
-	current = lst;
-	count = 0;
-	while (current)
-	{
-		count++;
-		current = current->next;
-	}
-	return (count);
-}
-
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
@@ -52,12 +37,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	else
 		*lst = new;
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
 }
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
