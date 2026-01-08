@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 08:49:42 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 18:10:17 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 20:46:31 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_simulation	*create_sim()
 	sim->is_over = 0;
 	pthread_mutex_init(&sim->state_lock, NULL);
 	pthread_mutex_init(&sim->stdout_lock, NULL);
+	sim->currently_eating = 0;
+	pthread_mutex_init(&sim->currently_eating_lock, NULL);
 	return (sim);
 }
 
@@ -32,6 +34,7 @@ void	free_sim(t_simulation *sim)
 {
 	pthread_mutex_destroy(&sim->state_lock);
 	pthread_mutex_destroy(&sim->stdout_lock);
+	pthread_mutex_destroy(&sim->currently_eating_lock);
 	free(sim);
 }
 

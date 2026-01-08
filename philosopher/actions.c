@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:39:03 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 20:33:37 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 21:28:09 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,11 @@ void	philo_eat(t_philo *philo)
 		usleep(philo->args->time_to_die * 1000);	
 		return ;
 	}
-	if (is_sim_over(philo->sim))
-		return ;
 	pthread_mutex_lock(philo->fork_r);
-	sim_print_action(philo->sim, "%zu %d has taken a fork\n", philo->philo_id);
+	update_last_meal_time(philo);
 	if (is_sim_over(philo->sim))
 		return ;
-	update_last_meal_time(philo);
+	sim_print_action(philo->sim, "%zu %d has taken a fork\n", philo->philo_id);
 	if (is_sim_over(philo->sim))
 		return ;
 	sim_print_action(philo->sim, "%zu %d is eating\n", philo->philo_id);
