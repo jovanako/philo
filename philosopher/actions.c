@@ -6,16 +6,28 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:39:03 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 17:33:16 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:48:19 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+int		is_done_eating(t_philo *philo)
+{
+	long	done_eating;
+
+	pthread_mutex_lock(&philo->last_meal_time_lock);
+	done_eating = philo->args->num_meals != 0
+		&& philo->num_times_ate == philo->args->num_meals;
+	pthread_mutex_unlock(&philo->last_meal_time_lock);
+	return done_eating;
+}
+
 void	update_last_meal_time(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->last_meal_time_lock);
 	philo->last_meal_time = get_time();
+	philo->num_times_ate++;
 	pthread_mutex_unlock(&philo->last_meal_time_lock);
 }
 

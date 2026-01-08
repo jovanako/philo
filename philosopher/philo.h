@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:29:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 17:32:31 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:48:55 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHILO_H
 
 #include <pthread.h>
+#include <unistd.h>
 #include "../input/input.h"
 #include "../lists/lists.h"
 #include "../simulation/simulation.h"
@@ -25,6 +26,7 @@ typedef struct s_philo
 	t_simulation	*sim;
 	t_args			*args;
 	long			last_meal_time;
+	long			num_times_ate;
 	pthread_mutex_t last_meal_time_lock;
 	pthread_mutex_t	fork_l;
 	pthread_mutex_t	*fork_r;
@@ -36,6 +38,7 @@ void	philo_eat(t_philo *philo);
 void	philo_sleep(t_philo *philo);
 void	philo_think(t_philo *philo);
 void	clean_up_philos(t_list *philo_list);
+int		is_done_eating(t_philo *philo);
 void	update_last_meal_time(t_philo *philo);
 void	lock_first_fork(t_philo *philo);
 void	lock_second_fork(t_philo *philo);

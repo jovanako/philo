@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:28:52 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/07 15:53:48 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:39:13 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MONITOR_H
 
 #include "../philosopher/philo.h"
+#include <unistd.h>
 
 typedef struct s_monitor
 {
@@ -23,5 +24,7 @@ typedef struct s_monitor
 }	t_monitor;
 
 t_monitor	*create_monitor(t_list *philo_list, t_simulation *sim);
+int			all_done_eating(t_monitor *monitor);
+int			someone_died(t_monitor *monitor);
 int			start_monitor(t_monitor *monitor);
 #endif

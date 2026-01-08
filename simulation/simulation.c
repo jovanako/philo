@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 08:49:42 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 17:46:28 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 18:10:17 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,9 @@ int		is_sim_over(t_simulation *sim)
 {
 	int	is_over;
 	
-	// printf("Debug: aquiring sim state lock for read\n");
 	pthread_mutex_lock(&sim->state_lock);
 	is_over = sim->is_over;
 	pthread_mutex_unlock(&sim->state_lock);
-	// printf("Debug: releasing sim state lock for read, is_over: %d\n", is_over);
 	return (is_over);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:42:52 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 09:31:08 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 19:43:30 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int	philo_init(t_philo **philo, t_args *args, t_simulation *sim)
 	(*philo)->sim = sim;
 	pthread_mutex_init(&(*philo)->fork_l, NULL);
 	(*philo)->last_meal_time = 0;
+	(*philo)->num_times_ate = 0;
 	pthread_mutex_init(&(*philo)->last_meal_time_lock, NULL);
 	return (1);
 }
