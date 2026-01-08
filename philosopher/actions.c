@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:39:03 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 19:48:19 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 20:33:37 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	update_last_meal_time(t_philo *philo)
 
 void	philo_eat(t_philo *philo)
 {
-	lock_first_fork(philo);
+	pthread_mutex_lock(&philo->fork_l);
 	sim_print_action(philo->sim, "%zu %d has taken a fork\n", philo->philo_id);
 	if (philo->args->num_philos == 1)
 	{
@@ -42,7 +42,7 @@ void	philo_eat(t_philo *philo)
 	}
 	if (is_sim_over(philo->sim))
 		return ;
-	lock_second_fork(philo);
+	pthread_mutex_lock(philo->fork_r);
 	sim_print_action(philo->sim, "%zu %d has taken a fork\n", philo->philo_id);
 	if (is_sim_over(philo->sim))
 		return ;
