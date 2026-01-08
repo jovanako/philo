@@ -6,11 +6,11 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:05:07 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/05 17:34:44 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:10:17 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "helpers.h"
 
 int	ft_strlen(char *s)
 {
@@ -43,15 +43,4 @@ long	get_time()
 	return (seconds * 1000 + microseconds / 1000);	
 }
 
-int		check_args(t_args *args)
-{
-	// not sure what arg values should be invalid
-	if (args->num_philos < 1 || args->time_to_die <= 0
-		|| args->time_to_eat <= 0 || args->time_to_sleep < 0
-		|| args->number_of_times_each_philosopher_must_eat < 0)
-		{
-			write(2, "Invalid args\n", 13);
-			return (0);
-		}
-	return (1);
-}
+

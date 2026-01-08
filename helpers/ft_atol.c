@@ -6,11 +6,11 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 20:06:01 by jkovacev          #+#    #+#             */
-/*   Updated: 2025/12/26 20:18:10 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:18:33 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "helpers.h"
 
 static int	ft_isdigit(char c)
 {

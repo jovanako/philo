@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists1.c                                           :+:      :+:    :+:   */
+/*   lists.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:33:14 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/05 18:13:01 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/06 17:35:34 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "lists.h"
 
 t_list	*ft_lstnew(void *content)
 {
@@ -24,19 +24,27 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_lstadd_back(t_list **lst, void *content)
 {
 	t_list	*last;
-
-	if (*lst)
-	{
-		last = *lst;
-		while (last->next)
-			last = last->next;
-		last->next = new;
-	}
+	t_list	*new;
+	
+	new = ft_lstnew(content);
+	if (!new)
+		print_error_and_return("Failed malloc\n", 0);
 	else
-		*lst = new;
+	{
+		if (*lst)
+		{
+			last = *lst;
+			while (last->next)
+				last = last->next;
+			last->next = new;
+		}
+		else
+			*lst = new;		
+	}
+	return (1);	
 }
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
