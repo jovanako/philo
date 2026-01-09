@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:06 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:35:11 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:02:23 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ int	start_philos(t_list *philo_list)
 	while (current_philo_node)
 	{
 		current_philo = (t_philo *)current_philo_node->content;
-		update_last_meal_time(current_philo);
+		pthread_mutex_lock(&current_philo->last_meal_time_lock);
+		current_philo->last_meal_time = get_time();
+		pthread_mutex_unlock(&current_philo->last_meal_time_lock);
 		if (pthread_create(&current_philo->thread_id, NULL, &routine, current_philo) != 0)
 			return (print_error_and_ret("Failed to create thread\n", 0));
 		current_philo_node = current_philo_node->next;
