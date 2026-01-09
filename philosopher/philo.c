@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:06 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 21:23:33 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:46:18 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	*routine(void *ph)
 		philo_think(philo);
 		request_seat(philo->sim, philo->args->num_philos);
 		philo_eat(philo);
-		pthread_mutex_unlock(philo->fork_r);
+		unlock_second_fork(philo);
 		if (&philo->fork_l != philo->fork_r)
-			pthread_mutex_unlock(&philo->fork_l);
+			unlock_first_fork(philo);
 		release_seat(philo->sim);
 		if (is_sim_over(philo->sim))
 			return ((void *)NULL);

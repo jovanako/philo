@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:42:15 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 21:19:09 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 13:05:09 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	request_seat(t_simulation *sim, long num_philos)
 	while (1)
 	{
 		pthread_mutex_lock(&sim->currently_eating_lock);
-		if (sim->currently_eating < num_philos - 1)
+		if (sim->currently_eating < num_philos - 1 || num_philos == 1)
 		{
 			sim->currently_eating++;
 			pthread_mutex_unlock(&sim->currently_eating_lock);

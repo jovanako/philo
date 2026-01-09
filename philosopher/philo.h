@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:29:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 20:35:07 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:42:39 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,8 @@ void	philo_think(t_philo *philo);
 void	clean_up_philos(t_list *philo_list);
 int		is_done_eating(t_philo *philo);
 void	update_last_meal_time(t_philo *philo);
+void	lock_first_fork(t_philo *philo);
+void	lock_second_fork(t_philo *philo);
+void	unlock_first_fork(t_philo *philo);
+void	unlock_second_fork(t_philo *philo);
 #endif

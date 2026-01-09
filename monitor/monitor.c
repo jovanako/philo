@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 16:49:02 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 19:50:42 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/08 21:44:48 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	*monitor_routine(void *m)
 	{
 		if (someone_died(monitor) || all_done_eating(monitor))
 			return ((void *)0);
-		usleep(100);
+		usleep(1000);
 	}
 	return ((void *)0);
 }
