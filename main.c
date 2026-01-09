@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:19:21 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 22:08:41 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:21:32 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int argc, char *argv[])
 	args = parse_args(argc, argv);
 	if (!args)
 		return (1);
-	printf("num: %ld\n", args->num_philos);
 	sim = create_sim();
 	if (!sim)
 		return (delete_args(args));
