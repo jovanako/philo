@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:37:13 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 20:22:26 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:18:24 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	invalid_args(t_args *args)
 {
-	// not sure what arg values should be invalid
 	if (args->num_philos < 1 || args->num_philos > 200 
 		|| args->time_to_die < 0 || args->time_to_eat < 0
 		|| args->time_to_sleep < 0 || args->num_meals < 0)
@@ -32,14 +31,14 @@ int	delete_args(t_args *args)
 	return (1);
 }
 
-static int	check_if_alpha(char *argv[])
+static int	arg_check(int argc, char *argv[])
 {
 	int		i;
 
 	i = 1;
-	while (argv[i])
+	while (i < argc)
 	{
-		if (ft_is_alpha(argv[i]))
+		if (ft_strlen(argv[i]) == 0 || ft_is_alpha(argv[i]))
 			return (1);
 		i++;
 	}
@@ -58,7 +57,7 @@ t_args	*parse_args(int argc, char *argv[])
 
 	if (argc < 5 || argc > 6)
 		return (error_and_ret("Invalid number of args\n"));
-	if (check_if_alpha(argv))
+	if (arg_check(argc, argv))
 		return (error_and_ret("Invalid args\n"));
 	args = malloc(sizeof(t_args));
 	if (!args)

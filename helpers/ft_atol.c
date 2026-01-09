@@ -6,11 +6,12 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 20:06:01 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/07 17:18:33 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:14:48 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "helpers.h"
+#include <limits.h>
 
 static int	ft_isdigit(char c)
 {
@@ -48,6 +49,8 @@ long	ft_atol(char *nptr)
 	while ((i < ft_strlen(nptr)) && ft_isdigit(nptr[i]))
 	{
 		result = result * 10 + (nptr[i] - '0');
+		if (result > INT_MAX)
+			return (-1);
 		i++;
 	}
 	result *= sign;
