@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:05:07 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/06 18:10:17 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:34:18 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strlen(char *s)
 	return (len);
 }
 
-int	print_error_and_return(char *s, int ret)
+int	print_error_and_ret(char *s, int ret)
 {
 	write(2, s, ft_strlen(s));
 	return (ret);
@@ -42,5 +42,3 @@ long	get_time()
 	microseconds = tv.tv_usec;
 	return (seconds * 1000 + microseconds / 1000);	
 }
-
-

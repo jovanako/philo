@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:33:14 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/06 17:35:34 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:34:52 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_lstadd_back(t_list **lst, void *content)
 	
 	new = ft_lstnew(content);
 	if (!new)
-		print_error_and_return("Failed malloc\n", 0);
+		print_error_and_ret("Failed malloc\n", 0);
 	else
 	{
 		if (*lst)

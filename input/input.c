@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:37:13 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 09:27:07 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:33:45 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ static int	invalid_args(t_args *args)
 	return (0);
 }
 
-void	delete_args(void *a)
+int	delete_args(t_args *args)
 {
-	t_args	*args;
-	
-	args = (t_args *)a;
 	free(args);
+	return (1);
 }
 
 t_args	*parse_args(int argc, char *argv[])

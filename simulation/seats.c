@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:42:15 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 13:05:09 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:25:54 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,12 @@ void	release_seat(t_simulation *sim)
 	pthread_mutex_lock(&sim->currently_eating_lock);
 	sim->currently_eating--;
 	pthread_mutex_unlock(&sim->currently_eating_lock);
+}
+
+void	delete_sim(t_simulation *sim)
+{
+	pthread_mutex_destroy(&sim->state_lock);
+	pthread_mutex_destroy(&sim->stdout_lock);
+	pthread_mutex_destroy(&sim->currently_eating_lock);
+	free(sim);
 }

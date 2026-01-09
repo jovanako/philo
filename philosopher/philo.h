@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:29:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 12:42:39 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:06:21 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ typedef struct s_philo
 }	t_philo;
 
 t_list	*create_philo_list(t_args *args, t_simulation *sim);
+int		clean_up_philo_fail(t_args *args, t_simulation *sim);
 int		start_philos(t_list *philo_list);
 void	philo_eat(t_philo *philo);
 void	philo_sleep(t_philo *philo);
 void	philo_think(t_philo *philo);
 void	clean_up_philos(t_list *philo_list);
+void	*clean_up_nodes(t_list *philo_list);
 int		is_done_eating(t_philo *philo);
 void	update_last_meal_time(t_philo *philo);
 void	lock_first_fork(t_philo *philo);

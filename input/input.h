@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:30:37 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 09:24:13 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:05:37 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ typedef struct s_args
 	long	num_meals;
 }	t_args;
 
-void	delete_args(void *a);
 t_args	*parse_args(int argc, char *argv[]);
+int		delete_args(t_args *args);
 #endif
