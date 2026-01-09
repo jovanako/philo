@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:19:21 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:34:43 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:37:15 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,9 @@ int	main(int argc, char *argv[])
 	if (!monitor)
 		return (clean_up_monitor_fail(args, sim, philo_list));
 	sim->start_time = get_time();
-	if (!start_philos(philo_list))
-		return (clean_up_all(args, sim, philo_list, monitor));
-	if (!start_monitor(monitor))
-		return (clean_up_all(args, sim, philo_list, monitor));
-	if (!join_threads(philo_list, monitor))
+	if (!start_philos(philo_list)
+		|| !start_monitor(monitor)
+		|| !join_threads(philo_list, monitor))
 		return (clean_up_all(args, sim, philo_list, monitor));
 	clean_up_all(args, sim, philo_list, monitor);
 	return (0);
