@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:37:44 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:34:25 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/09 20:11:55 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ long	ft_atol(char *nptr);
 int		ft_strlen(char *s);
 int		print_error_and_ret(char *s, int ret);
 long	get_time();
+int		ft_is_alpha(char *s);
 #endif
