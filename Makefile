@@ -15,7 +15,6 @@ NAME = philo
 CC = cc
 
 CFLAGS = -g -Wall -Wextra -Werror
-#remove -g
 
 SRCS := main.c \
 	$(wildcard helpers/*.c) \
