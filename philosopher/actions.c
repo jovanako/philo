@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-int		is_done_eating(t_philo *philo)
+int	is_done_eating(t_philo *philo)
 {
 	int	done_eating;
 
@@ -37,7 +37,7 @@ void	philo_eat(t_philo *philo)
 	sim_print_action(philo->sim, "%zu %d has taken a fork\n", philo->philo_id);
 	if (philo->args->num_philos == 1)
 	{
-		usleep(philo->args->time_to_die * 1000);	
+		usleep(philo->args->time_to_die * 1000);
 		return ;
 	}
 	lock_second_fork(philo);
@@ -54,7 +54,7 @@ void	philo_eat(t_philo *philo)
 void	philo_sleep(t_philo *philo)
 {
 	sim_print_action(philo->sim, "%zu %d is sleeping\n", philo->philo_id);
-	usleep(philo->args->time_to_sleep * 1000);	
+	usleep(philo->args->time_to_sleep * 1000);
 }
 
 void	philo_think(t_philo *philo)

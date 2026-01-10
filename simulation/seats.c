@@ -22,7 +22,7 @@ void	request_seat(t_simulation *sim, long num_philos)
 			sim->currently_eating++;
 			pthread_mutex_unlock(&sim->currently_eating_lock);
 			return ;
-		}	
+		}
 		pthread_mutex_unlock(&sim->currently_eating_lock);
 		usleep(10);
 	}

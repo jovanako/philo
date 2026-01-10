@@ -29,7 +29,7 @@ static int	clean_up_all(t_args *a, t_simulation *s, t_list *p, t_monitor *m)
 int	join_threads(t_list *philo_list, t_monitor *monitor)
 {
 	t_philo	*philo;
-	
+
 	while(philo_list)
 	{
 		philo = (t_philo *)philo_list->content;
@@ -47,8 +47,8 @@ int	main(int argc, char *argv[])
 	t_args			*args;
 	t_list			*philo_list;
 	t_simulation	*sim;
-	t_monitor		*monitor;	
-	
+	t_monitor		*monitor;
+
 	args = parse_args(argc, argv);
 	if (!args)
 		return (1);

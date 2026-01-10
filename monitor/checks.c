@@ -14,20 +14,21 @@
 
 static int	is_dead(t_philo *philo)
 {
-	int philo_dead;
-	long current_time;
-	
+	int		philo_dead;
+	long	current_time;
+
 	pthread_mutex_lock(&philo->last_meal_time_lock);
 	current_time = get_time();
-	philo_dead = current_time - philo->last_meal_time >= philo->args->time_to_die;
+	philo_dead = current_time - philo->last_meal_time 
+			>= philo->args->time_to_die;
 	pthread_mutex_unlock(&philo->last_meal_time_lock);
 	return (philo_dead);
 }
 
 int	all_done_eating(t_monitor *monitor)
 {
-	t_list		*current_philo;
-	t_philo		*philo;
+	t_list	*current_philo;
+	t_philo	*philo;
 
 	current_philo = monitor->philo_list;
 	while (current_philo)

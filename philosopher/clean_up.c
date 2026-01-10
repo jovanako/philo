@@ -29,7 +29,7 @@ void	clean_up_philos(t_list *philo_list)
 
 void	*clean_up_nodes(t_list *philo_list)
 {
-	if (philo_list)
-		clean_up_philos(philo_list);	
+	if	(philo_list)
+		clean_up_philos(philo_list);
 	return (NULL);
 }

@@ -12,34 +12,34 @@
 
 #include "philo.h"
 
-void lock_first_fork(t_philo *philo)
+void	lock_first_fork(t_philo *philo)
 {
 	if (philo->philo_id % 2 == 1)
 		pthread_mutex_lock(&philo->fork_l);
-	else	
+	else
 		pthread_mutex_lock(philo->fork_r);
 }
 
-void lock_second_fork(t_philo *philo)
+void	lock_second_fork(t_philo *philo)
 {
 	if (philo->philo_id % 2 == 1)
 		pthread_mutex_lock(philo->fork_r);
-	else	
+	else
 		pthread_mutex_lock(&philo->fork_l);
 }
 
-void unlock_first_fork(t_philo *philo)
+void	unlock_first_fork(t_philo *philo)
 {
 	if (philo->philo_id % 2 == 1)
 		pthread_mutex_unlock(&philo->fork_l);
-	else	
+	else
 		pthread_mutex_unlock(philo->fork_r);
 }
 
-void unlock_second_fork(t_philo *philo)
+void	unlock_second_fork(t_philo *philo)
 {
 	if (philo->philo_id % 2 == 1)
 		pthread_mutex_unlock(philo->fork_r);
-	else	
+	else
 		pthread_mutex_unlock(&philo->fork_l);
 }

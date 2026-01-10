@@ -14,7 +14,7 @@
 
 int	ft_strlen(char *s)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (s)
@@ -36,12 +36,13 @@ long	get_time()
 	struct	timeval tv;
 	long	seconds;
 	long	microseconds;
-	
+
 	gettimeofday(&tv, NULL);
 	seconds = tv.tv_sec;
 	microseconds = tv.tv_usec;
-	return (seconds * 1000 + microseconds / 1000);	
+	return (seconds * 1000 + microseconds / 1000);
 }
+
 int	ft_is_alpha(char *s)
 {
 	int	i;

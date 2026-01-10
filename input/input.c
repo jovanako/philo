@@ -14,7 +14,7 @@
 
 static int	invalid_args(t_args *args)
 {
-	if (args->num_philos < 1 || args->num_philos > 200 
+	if (args->num_philos < 1 || args->num_philos > 200
 		|| args->time_to_die < 0 || args->time_to_eat < 0
 		|| args->time_to_sleep < 0 || args->num_meals < 0)
 		{
@@ -33,7 +33,7 @@ int	delete_args(t_args *args)
 
 static int	arg_check(int argc, char *argv[])
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	while (i < argc)

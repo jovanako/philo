@@ -27,7 +27,7 @@ typedef struct s_philo
 	t_args			*args;
 	long			last_meal_time;
 	long			num_times_ate;
-	pthread_mutex_t last_meal_time_lock;
+	pthread_mutex_t	last_meal_time_lock;
 	pthread_mutex_t	fork_l;
 	pthread_mutex_t	*fork_r;
 }	t_philo;

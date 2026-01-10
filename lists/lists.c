@@ -28,7 +28,7 @@ int	ft_lstadd_back(t_list **lst, void *content)
 {
 	t_list	*last;
 	t_list	*new;
-	
+
 	new = ft_lstnew(content);
 	if (!new)
 		print_error_and_ret("Failed malloc\n", 0);
@@ -42,9 +42,9 @@ int	ft_lstadd_back(t_list **lst, void *content)
 			last->next = new;
 		}
 		else
-			*lst = new;		
+			*lst = new;
 	}
-	return (1);	
+	return (1);
 }
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
@@ -59,14 +59,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(temp);
 	}
 	*lst = NULL;
-}
-
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (lst != NULL)
-	{
-		if (lst->content != NULL)
-			del(lst->content);
-		free(lst);
-	}
 }

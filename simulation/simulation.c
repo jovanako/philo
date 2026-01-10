@@ -46,10 +46,10 @@ void	sim_print_action(t_simulation *sim, char *msg, int philo_id)
 	pthread_mutex_unlock(&sim->stdout_lock);
 }
 
-int		is_sim_over(t_simulation *sim)
+int	is_sim_over(t_simulation *sim)
 {
 	int	is_over;
-	
+
 	pthread_mutex_lock(&sim->state_lock);
 	is_over = sim->is_over;
 	pthread_mutex_unlock(&sim->state_lock);
@@ -60,5 +60,5 @@ void	mark_sim_over(t_simulation *sim)
 {
 	pthread_mutex_lock(&sim->state_lock);
 	sim->is_over = 1;
-	pthread_mutex_unlock(&sim->state_lock);	
+	pthread_mutex_unlock(&sim->state_lock);
 }
