@@ -6,18 +6,18 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:29:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 18:06:21 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:29:27 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-#include <pthread.h>
-#include <unistd.h>
-#include "../input/input.h"
-#include "../lists/lists.h"
-#include "../simulation/simulation.h"
+# include <pthread.h>
+# include <unistd.h>
+# include "../input/input.h"
+# include "../lists/lists.h"
+# include "../simulation/simulation.h"
 
 typedef struct s_philo
 {

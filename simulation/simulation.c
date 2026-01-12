@@ -6,13 +6,13 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 08:49:42 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/08 20:46:31 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:29:53 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "simulation.h"
 
-t_simulation	*create_sim()
+t_simulation	*create_sim(void)
 {
 	t_simulation	*sim;
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: jkovacev <jkovacev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/26 19:58:27 by jkovacev          #+#    #+#              #
-#    Updated: 2026/01/09 18:04:47 by jkovacev         ###   ########.fr        #
+#    Updated: 2026/01/12 11:36:57 by jkovacev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = cc
 
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS := main.c \
 	$(wildcard helpers/*.c) \

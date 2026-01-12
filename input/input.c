@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:37:13 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 22:18:24 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:16:57 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static int	invalid_args(t_args *args)
 	if (args->num_philos < 1 || args->num_philos > 200
 		|| args->time_to_die < 0 || args->time_to_eat < 0
 		|| args->time_to_sleep < 0 || args->num_meals < 0)
-		{
-			write(2, "Invalid args\n", 13);
-			free(args);
-			return (1);
-		}
+	{
+		write(2, "Invalid args\n", 13);
+		free(args);
+		return (1);
+	}
 	return (0);
 }
 

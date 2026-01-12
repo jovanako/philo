@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 19:31:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 21:05:48 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:25:20 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	is_dead(t_philo *philo)
 	pthread_mutex_lock(&philo->last_meal_time_lock);
 	current_time = get_time();
 	philo_dead = current_time - philo->last_meal_time 
-			>= philo->args->time_to_die;
+		>= philo->args->time_to_die;
 	pthread_mutex_unlock(&philo->last_meal_time_lock);
 	return (philo_dead);
 }
@@ -54,7 +54,7 @@ int	someone_died(t_monitor *monitor)
 		{
 			sim_print_action(philo->sim, "%zu %d died\n", philo->philo_id);
 			mark_sim_over(monitor->sim);
-			return (1);	
+			return (1);
 		}
 		current_philo = current_philo->next;
 	}

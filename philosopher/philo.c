@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:06 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 21:02:23 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:28:55 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*routine(void *ph)
 	while (!is_done_eating(philo))
 	{
 		if (is_sim_over(philo->sim))
-			return ((void *)NULL);
+			return (NULL);
 		philo_think(philo);
 		request_seat(philo->sim, philo->args->num_philos);
 		philo_eat(philo);
@@ -31,11 +31,11 @@ void	*routine(void *ph)
 			unlock_first_fork(philo);
 		release_seat(philo->sim);
 		if (is_sim_over(philo->sim))
-			return ((void *)NULL);
+			return (NULL);
 		philo_sleep(philo);
 		i++;
 	}
-	return ((void *)NULL);
+	return (NULL);
 }
 
 int	start_philos(t_list *philo_list)

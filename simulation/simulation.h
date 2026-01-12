@@ -6,18 +6,18 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 08:49:30 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 18:22:34 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:30:16 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SIMULATION_H
 # define SIMULATION_H
 
-#include <pthread.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "../helpers/helpers.h"
+# include <pthread.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include "../helpers/helpers.h"
 
 typedef struct simulation
 {
@@ -29,7 +29,7 @@ typedef struct simulation
 	pthread_mutex_t	currently_eating_lock;
 }	t_simulation;
 
-t_simulation	*create_sim();
+t_simulation	*create_sim(void);
 void			free_sim(t_simulation *sim);
 void			sim_print_action(t_simulation *sim, char *msg, int philo_id);
 int				is_sim_over(t_simulation *sim);

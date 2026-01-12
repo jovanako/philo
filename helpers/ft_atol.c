@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 20:06:01 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 22:14:48 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:12:21 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	ft_isdigit(char c)
 {
 	if (!(c >= '0' && c <= '9'))
-		return(0);
+		return (0);
 	return (1);
 }
 

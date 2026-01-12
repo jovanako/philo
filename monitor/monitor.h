@@ -6,16 +6,16 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:28:52 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:32:46 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:26:07 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MONITOR_H
 # define MONITOR_H
 
-#include "../philosopher/philo.h"
-#include "../simulation/simulation.h"
-#include <unistd.h>
+# include "../philosopher/philo.h"
+# include "../simulation/simulation.h"
+# include <unistd.h>
 
 typedef struct s_monitor
 {

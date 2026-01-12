@@ -6,15 +6,15 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:27:53 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/07 17:27:17 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:24:30 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LISTS_H
 # define LISTS_H
 
-#include <stdlib.h>
-#include "../helpers/helpers.h"
+# include <stdlib.h>
+# include "../helpers/helpers.h"
 
 typedef struct s_list
 {

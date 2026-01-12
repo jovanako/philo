@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 16:49:02 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:34:56 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:25:48 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_monitor	*create_monitor(t_list *philo_list, t_simulation *sim)
 
 int	start_monitor(t_monitor *monitor)
 {
-	char *error_message;
+	char	*error_message;
 
 	error_message = "Failed to create monitor thread\n";
 	if (pthread_create(&monitor->thread_id, NULL, &monitor_routine, monitor))

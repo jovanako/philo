@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 18:38:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 19:25:11 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:27:02 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	clean_up_philos(t_list *philo_list)
 
 void	*clean_up_nodes(t_list *philo_list)
 {
-	if	(philo_list)
+	if (philo_list)
 		clean_up_philos(philo_list);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:19:21 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/09 22:21:32 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:11:39 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	join_threads(t_list *philo_list, t_monitor *monitor)
 {
 	t_philo	*philo;
 
-	while(philo_list)
+	while (philo_list)
 	{
 		philo = (t_philo *)philo_list->content;
 		if (pthread_join(philo->thread_id, NULL) != 0)
