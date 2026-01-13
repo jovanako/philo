@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:29:16 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/12 11:29:27 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:33:26 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void	lock_first_fork(t_philo *philo);
 void	lock_second_fork(t_philo *philo);
 void	unlock_first_fork(t_philo *philo);
 void	unlock_second_fork(t_philo *philo);
+void	smart_sleep(long duration, t_philo *philo);
 #endif

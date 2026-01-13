@@ -6,11 +6,24 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:39:03 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/12 11:26:36 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:32:55 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	smart_sleep(long duration, t_philo *philo)
+{
+	long	start;
+	
+	start = get_time();
+	while (get_time() - start < duration)
+	{
+		if (is_sim_over(philo->sim))
+			return ;
+		usleep(500);
+	}
+}
 
 int	is_done_eating(t_philo *philo)
 {
@@ -48,13 +61,13 @@ void	philo_eat(t_philo *philo)
 	if (is_sim_over(philo->sim))
 		return ;
 	sim_print_action(philo->sim, "%zu %d is eating\n", philo->philo_id);
-	usleep(philo->args->time_to_eat * 1000);
+	smart_sleep(philo->args->time_to_eat, philo);
 }
 
 void	philo_sleep(t_philo *philo)
 {
 	sim_print_action(philo->sim, "%zu %d is sleeping\n", philo->philo_id);
-	usleep(philo->args->time_to_sleep * 1000);
+	smart_sleep(philo->args->time_to_sleep, philo);
 }
 
 void	philo_think(t_philo *philo)
